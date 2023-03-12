@@ -78,8 +78,8 @@ bool CollectionInfo::Save()
     bool retval = true;
     if(saveRequest)
     {
-        std::string dir  = Utils::combinePath(Configuration::absolutePath, "collections", name, "playlists");
-        std::string file = Utils::combinePath(Configuration::absolutePath, "collections", name, "playlists/favorites.txt");
+        std::string dir  = Utils::combinePath(Configuration::userPath, "collections", name, "playlists");
+        std::string file = Utils::combinePath(Configuration::userPath, "collections", name, "playlists/favorites.txt");
         Logger::write(Logger::ZONE_INFO, "Collection", "Saving " + file);
 
         Utils::rootfsWritable();

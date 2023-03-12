@@ -379,7 +379,7 @@ void CollectionInfoBuilder::addPlaylists(CollectionInfo *info)
 	DIR *dp;
     struct dirent **dirp;
     int n;
-    std::string path = Utils::combinePath(Configuration::absolutePath, "collections", info->name, "playlists");
+    std::string path = Utils::combinePath(Configuration::userPath, "collections", info->name, "playlists");
     dp = opendir(path.c_str());
 
     if(dp == NULL)
@@ -407,7 +407,7 @@ void CollectionInfoBuilder::addPlaylists(CollectionInfo *info)
                 Logger::write(Logger::ZONE_INFO, "RetroFE", "Loading playlist: " + basename);
 
                 std::map<std::string, Item *> playlistFilter;
-                std::string playlistFile = Utils::combinePath(Configuration::absolutePath, "collections", info->name, "playlists", file);
+                std::string playlistFile = Utils::combinePath(Configuration::userPath, "collections", info->name, "playlists", file);
                 ImportBasicList(info, playlistFile, playlistFilter);
 
                 info->playlists[basename] = new std::vector<Item *>();
