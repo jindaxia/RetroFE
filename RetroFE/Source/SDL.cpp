@@ -458,7 +458,7 @@ void SDL::renderAndFlipWindow( )
 {
 	//SDL_BlitSurface(window_virtual_, NULL, window_, NULL);
     memcpy(window_->pixels, window_virtual_->pixels, window_->h*window_->w*sizeof(uint32_t));
-	//SDL_Rotate_270(window_virtual_, window_);
+	SDL_Rotate_270(window_virtual_, window_);
 
 	SDL_Flip(window_);
 }
